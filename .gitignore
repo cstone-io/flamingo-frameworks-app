@@ -1,24 +1,10 @@
-# Logs
-chatbot-client/logs
-chatbot-client/*.log
-chatbot-client/npm-debug.log*
-chatbot-client/yarn-debug.log*
-chatbot-client/yarn-error.log*
-chatbot-client/pnpm-debug.log*
-chatbot-client/lerna-debug.log*
-
-chatbot-client/node_modules
-chatbot-client/dist
-chatbot-client/dist-ssr
-chatbot-client/*.local
-
-# Editor directories and files
-chatbot-client/.vscode/*
-chatbot-client/!.vscode/extensions.json
-chatbot-client/.idea
-chatbot-client/.DS_Store
-chatbot-client/*.suo
-chatbot-client/*.ntvs*
-chatbot-client/*.njsproj
-chatbot-client/*.sln
-chatbot-client/*.sw?
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.eslintcache
+coverage
+.nyc_output
+.stylelintcache
+cypress/videos
