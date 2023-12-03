@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: app
+    image: flamingo-frameworks/app
+    build:
+        context: .
+        dockerfile: Dockerfile
+    env_file:
+        - .env
+    ports:
+        - "3010:5173"
+    volumes:
+        - ./src:/home/node/app/src:ro
+    environment:
+        WATCHPACK_POLLING: true
+        WDS_SOCKET_PORT: 0
+    command: npm run dev
+    stdin_open: true
+    networks:
+      - default
+volumes:
+  node_modules:
+networks:
+  default:
+    driver: bridge
