@@ -1,9 +1,5 @@
-import {
-	AutoDraft,
-	BasicStorage,
-	ChatProvider,
-	ExampleChatService
-} from '@chatscope/use-chat'
+import { AutoDraft, BasicStorage, ChatProvider } from '@chatscope/use-chat'
+import { ExampleChatService } from '@chatscope/use-chat/dist/examples'
 import ChatPageContent from 'components/ChatPageContent'
 import ChatWindow from 'components/ChatWindow'
 import Head from 'components/Head'
