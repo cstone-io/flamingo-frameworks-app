@@ -10,17 +10,20 @@ import { ReactElement, useState } from 'react'
 
 export default function ChatWindow(): ReactElement {
 	const [value, setValue] = useState('')
-	const { sendMessage } = useChat()
+	const { sendMessage, setCurrentMessage } = useChat()
 
-	const handleSend = (text: any): void => {
+	const handleSend = (text: string): void => {
 		// Call your API here
 		// Then send the message
-		sendMessage(text)
+		console.log('text: ' + text)
+		setCurrentMessage(value)
+		setValue('')
 	}
 
-	const updateSetValueState = (text: any): void => {
+	const updateSetValueState = (text: string): void => {
 		const regex = /<br>/g
 		const result = text.replace(regex, '')
+		console.log(result)
 		setValue(result)
 	}
 
