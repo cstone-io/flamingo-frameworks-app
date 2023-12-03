@@ -6,7 +6,10 @@ const config = {
 	content: ['index.html', 'src/**/*.tsx'],
 	theme: {
 		fontFamily: {
-			sans: ['Inter', ...defaultConfig.theme.fontFamily.sans]
+			sans: ['Arial', 'sans-serif']
+		},
+		fontSize: {
+			base: '16px'
 		}
 	},
 	experimental: { optimizeUniversalDefaults: true },
