@@ -15,21 +15,19 @@ export default function ChatWindow(): ReactElement {
 	const { sendMessage, setCurrentMessage, currentMessages } = useChat()
 
 	const handleSend = (text: string): void => {
+		//FIXME:
 		// Call your API here
 		// Then send the message
-		// const input = new ChatMessage<MessageContentType>({
-		// 	id: '1',
-		// 	contentType: 0,
-		// 	senderId: '123',
-		// 	direction: MessageDirection.Outgoing,
-		// 	content: MessageContentTypeTextContent,
-		// 	createdTime: ,
-		// })
+		//sendMessage(): takes in a SendMessageParams type. Build this object,
+		//there was missing data, likely needed to be passed down from the provider
 		setCurrentMessage(text)
 		console.log('prompt that was submitted to API: \n' + text)
+		//once this is sent, then this line below clears the textbox
 		setValue('')
+		//you'll likely want to add another call here to render the cards
 	}
 
+	//this helper removes a break tag that is appended to the message you type in
 	const updateSetValueState = (text: string): void => {
 		const regex = /<br>/g
 		const result = text.replace(regex, '')
@@ -43,6 +41,7 @@ export default function ChatWindow(): ReactElement {
 					<MessageList>
 						{currentMessages.map(group => (
 							<MessageGroup key={group.id} direction={group.direction}>
+								{/* Here I tried to start mapping the messages, but clearly there's nothing in our  currentMessages*/}
 								{group.messages.map(message => (
 									<Message
 										key={message.id}
